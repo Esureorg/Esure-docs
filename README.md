@@ -8,6 +8,7 @@ The documentation source for the Esure project.
 - [System architecture](./ARCHITECTURE.md)
 - [Backend API contract](./API.md)
 - [Scenario format](./SCENARIOS.md)
+- [Issued asset payment lifecycle](./LIFECYCLE_ISSUED_ASSET_PAYMENT.md)
 - [Contributor backlog](./BACKLOG.md)
 
 ## Planned content
