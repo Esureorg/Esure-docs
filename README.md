@@ -4,6 +4,7 @@ The documentation source for the Esure project.
 
 ## Product definition
 
+- [Five-minute local quick start](./QUICKSTART.md)
 - [MVP specification](./MVP.md)
 - [System architecture](./ARCHITECTURE.md)
 - [Backend API contract](./API.md)
