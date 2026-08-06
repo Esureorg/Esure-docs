@@ -4,6 +4,12 @@ This guide runs the Esure frontend and backend from clean clones on Windows,
 macOS, or Linux. It uses Stellar Testnet only and does not require real
 credentials.
 
+## Prerequisites
+
+- Git
+- Node.js 20+
+- npm
+
 ## 1. Clone the two repositories
 
 Open two terminals.
