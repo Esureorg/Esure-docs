@@ -9,8 +9,8 @@
 - Amounts: decimal strings, never floating-point JSON numbers
 - MVP network: `testnet`
 
-The backend will publish an OpenAPI document. This file defines the product-level
-contract to implement.
+The backend publishes its machine-readable OpenAPI 3.1 document at
+`GET /openapi.json`.
 
 ## Health
 
@@ -70,8 +70,10 @@ Accepted response (`202`):
 }
 ```
 
-The MVP accepts only server-owned scenarios. Full client-supplied scenarios are
-deferred until abuse controls and resource budgets exist.
+Catalogued scenarios remain supported. To execute a validated client-supplied
+Scenario Schema v1 definition, POST the raw JSON or YAML document to
+`/api/v1/runs/definitions` using `application/json`, `application/yaml`, or
+`text/yaml`. Validate without execution at `/api/v1/scenarios/validate`.
 
 ## Read a run
 
@@ -82,6 +84,8 @@ deferred until abuse controls and resource budgets exist.
   "id": "6e43bd3a-2278-4eaa-901e-f89d733d92e1",
   "scenarioId": "issued-asset-payment",
   "scenarioVersion": 1,
+  "scenarioSchemaVersion": 1,
+  "scenarioContentHash": "sha256:...",
   "network": "testnet",
   "status": "passed",
   "createdAt": "2026-08-06T12:00:00.000Z",
@@ -122,6 +126,7 @@ Errors must not expose secret keys, raw internal exceptions, or configuration.
 ## Initial error codes
 
 - `INVALID_REQUEST`
+- `INVALID_SCENARIO`
 - `SCENARIO_NOT_FOUND`
 - `RUN_NOT_FOUND`
 - `RUN_NOT_COMPLETE`
@@ -131,4 +136,3 @@ Errors must not expose secret keys, raw internal exceptions, or configuration.
 - `ASSERTION_FAILED`
 - `RATE_LIMITED`
 - `INTERNAL_ERROR`
-
